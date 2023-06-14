@@ -6,16 +6,12 @@
 
     <fragment
         android:id="@+id/nav_fragment_sign_up"
-        android:name="com.metinvandar.signupapp.SignUpFragment"
+        android:name="com.metinvandar.signupapp.sigup.SignUpFragment"
         android:label="@string/label_sign_up_fragment">
 
         <action
             android:id="@+id/action_sign_up_to_camera"
-            app:destination="@+id/nav_fragment_camera"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_from_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_from_right" />
+            app:destination="@+id/nav_fragment_camera" />
     </fragment>
 
     <fragment

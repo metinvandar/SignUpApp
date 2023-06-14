@@ -3,4 +3,17 @@
     <string name="label_sign_up_fragment">SignUp</string>
     <string name="label_camera_fragment">Camera</string>
     <string name="label_confirmation_fragment">Confirmation</string>
+    <string name="sign_up_title">Profile Creation</string>
+    <string name="sign_up_sub_title">Use the form below to submit your portfolio.\nAn email and password are required.</string>
+    <string name="placeholder_first_name">First Name</string>
+    <string name="placeholder_email">Email Address</string>
+    <string name="placeholder_password">Password</string>
+    <string name="placeholder_web_site">Website</string>
+    <string name="add_avatar">Tap to add avatar</string>
+    <string name="submit">Submit</string>
+    <string name="first_name_empty_error">First name can not be empty!</string>
+    <string name="email_empty_error">Email can not be empty!</string>
+    <string name="password_empty_error">Password should not be empty!</string>
+    <string name="website_empty_error">Website can not be empty!</string>
+    <string name="email_invalid">Email is invalid!</string>
 </resources>
