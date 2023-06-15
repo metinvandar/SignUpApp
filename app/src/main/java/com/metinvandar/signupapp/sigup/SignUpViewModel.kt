@@ -1,11 +1,13 @@
 package com.metinvandar.signupapp.sigup
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import data.FieldError
 import data.UserProfile
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,11 +26,11 @@ class SignUpViewModel @Inject constructor(): ViewModel() {
             emailAddress.isEmpty() -> {
                 FormState.Error(FieldError.FIRST_NAME_EMPTY)
             }
-            emailAddress.matches(Regex(EMAIL_REGEX)).not() -> {
+            !emailAddress.matches(Regex(EMAIL_REGEX)) -> {
                 FormState.Error(FieldError.EMAIL_INVALID)
             }
-            password.isEmpty() -> {
-                FormState.Error(FieldError.PASSWORD_EMPTY)
+            !password.matches(Regex(passwordRegex)) -> {
+                FormState.Error(FieldError.PASSWORD_INVALID)
             }
             webAddress.isEmpty() -> {
                 FormState.Error(FieldError.WEB_SITE_EMPTY)
@@ -48,7 +50,9 @@ class SignUpViewModel @Inject constructor(): ViewModel() {
 
         }
 
-        _formState.value = formValidationState
+        viewModelScope.launch {
+            _formState.emit(formValidationState)
+        }
 
     }
 
@@ -58,5 +62,6 @@ class SignUpViewModel @Inject constructor(): ViewModel() {
 
     companion object {
         private const val EMAIL_REGEX = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\$"
+        val passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}\$"
     }
 }

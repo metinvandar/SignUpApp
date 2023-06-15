@@ -59,6 +59,17 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
     implementation "androidx.camera:camera-view:$camerax_version"
 
+    //Unit Test
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "io.mockk:mockk:1.11.0"
+    testImplementation 'com.willowtreeapps.assertk:assertk:0.23'
+    testImplementation('androidx.arch.core:core-testing:2.0.0', {
+        exclude group: 'com.android.support', module: 'support-compat'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-core-utils'
+    })
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'

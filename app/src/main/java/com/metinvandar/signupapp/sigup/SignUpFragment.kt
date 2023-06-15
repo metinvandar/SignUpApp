@@ -130,10 +130,6 @@ class SignUpFragment : Fragment() {
 
     private fun handleFormValidationError(fieldError: FieldError) {
         when (fieldError.name) {
-            FieldError.EMAIL_EMPTY.name -> {
-                binding.emailTextInputLayout.error = getString(fieldError.errorMessageId)
-                binding.scrollView.scrollToView(binding.emailTextInputLayout)
-            }
             FieldError.EMAIL_INVALID.name -> {
                 binding.emailTextInputLayout.error = getString(fieldError.errorMessageId)
                 binding.scrollView.scrollToView(binding.emailTextInputLayout)
@@ -142,8 +138,9 @@ class SignUpFragment : Fragment() {
                 binding.firstNameTextInputLayout.error = getString(fieldError.errorMessageId)
                 binding.scrollView.scrollToView(binding.firstNameTextInputLayout)
             }
-            FieldError.PASSWORD_EMPTY.name -> {
+            FieldError.PASSWORD_INVALID.name -> {
                 binding.passwordTextInputLayout.error = getString(fieldError.errorMessageId)
+                binding.passwordEditText.text?.clear()
                 binding.scrollView.scrollToView(binding.passwordTextInputLayout)
             }
             FieldError.WEB_SITE_EMPTY.name -> {

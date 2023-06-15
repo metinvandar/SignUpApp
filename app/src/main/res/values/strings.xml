@@ -14,12 +14,16 @@
     <string name="submit">Submit</string>
     <string name="sign_in">Sign In</string>
     <string name="first_name_empty_error">First name can not be empty!</string>
-    <string name="email_empty_error">Email can not be empty!</string>
     <string name="password_empty_error">Password should not be empty!</string>
     <string name="website_empty_error">Website can not be empty!</string>
-    <string name="profile_photo_empty_error">Profile photo can not be empty!</string>
+    <string name="profile_photo_empty_error">Profile photo can not be empty!</string>Metin
     <string name="email_invalid">Email is invalid!</string>
     <string name="camera_permission_error">You must give camera permission to take a profile photo!</string>
     <string name="greeting_with_name">Hello, %1$s!</string>
     <string name="sign_in_description">Your super-awesome portfolio has been successfully submitted! The preview below is what the community will see!</string>
+    <string name="invalid_password_message">
+        Password must have these rules:\n
+        \u2022 Minimum length of 8 characters.\n
+        \u2022 At least one alphabetic character (uppercase or lowercase).\n
+        \u2022 At least one numeric digit.</string>
 </resources>
