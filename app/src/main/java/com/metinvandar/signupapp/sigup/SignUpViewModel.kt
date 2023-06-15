@@ -14,31 +14,35 @@ class SignUpViewModel @Inject constructor(): ViewModel() {
     private val _formState: MutableStateFlow<FormState> = MutableStateFlow(FormState.Idle())
     val formState: StateFlow<FormState> get() = _formState
 
-    var imagePath: String? = null
-    var userProfile: UserProfile? = null
+    val userProfile = UserProfile()
 
-    fun validateInputs(firstName: String, email: String, password: String, website: String, imagePath: String?) {
+    fun validateInputs(firstName: String, emailAddress: String, password: String, webAddress: String, image: String?) {
         val formValidationState = when {
             firstName.isEmpty() -> {
                 FormState.Error(FieldError.FIRST_NAME_EMPTY)
             }
-            email.isEmpty() -> {
+            emailAddress.isEmpty() -> {
                 FormState.Error(FieldError.FIRST_NAME_EMPTY)
             }
-            email.matches(Regex(EMAIL_REGEX)).not() -> {
+            emailAddress.matches(Regex(EMAIL_REGEX)).not() -> {
                 FormState.Error(FieldError.EMAIL_INVALID)
             }
             password.isEmpty() -> {
                 FormState.Error(FieldError.PASSWORD_EMPTY)
             }
-            website.isEmpty() -> {
+            webAddress.isEmpty() -> {
                 FormState.Error(FieldError.WEB_SITE_EMPTY)
             }
-            imagePath.isNullOrEmpty() -> {
+            image.isNullOrEmpty() -> {
                 FormState.Error(FieldError.PROFILE_PHOTO_EMPTY)
             }
             else -> {
-                userProfile = UserProfile(firstName, email, website, imagePath)
+                userProfile.run {
+                    name = firstName
+                    email = emailAddress
+                    webSite = webAddress
+                    imagePath = image
+                }
                 FormState.ValidationSuccess
             }
 
@@ -49,7 +53,7 @@ class SignUpViewModel @Inject constructor(): ViewModel() {
     }
 
     fun idleFormState() {
-        _formState.value = FormState.Idle(imagePath)
+        _formState.value = FormState.Idle(userProfile)
     }
 
     companion object {

@@ -62,7 +62,7 @@ class SignUpFragment : Fragment() {
                     binding.addAvatar.visibility = View.GONE
                     binding.imageViewAvatar.visibility = View.VISIBLE
                     binding.imageViewAvatar.setImageURI(it)
-                    viewModel.imagePath = it.toString()
+                    viewModel.userProfile.imagePath = it.toString()
                 }
             }
         }
@@ -82,11 +82,11 @@ class SignUpFragment : Fragment() {
         binding.avatarContainer.setOnClickListener { requestCameraPermission() }
         binding.submitButton.setOnClickListener {
             viewModel.validateInputs(
-                email = binding.emailEditText.text.toString(),
+                emailAddress = binding.emailEditText.text.toString(),
                 password = binding.passwordEditText.text.toString(),
                 firstName = binding.firstNameEditText.text.toString(),
-                website = binding.websiteEditText.text.toString(),
-                imagePath = imageUri?.toString()
+                webAddress = binding.websiteEditText.text.toString(),
+                image = imageUri?.toString()
             )
         }
     }
@@ -106,7 +106,7 @@ class SignUpFragment : Fragment() {
                             handleFormValidationError(formState.fieldError)
                         }
                         is FormState.Idle -> {
-                            formState.imagePath?.let {
+                            formState.userProfile?.imagePath?.let {
                                 val uri = Uri.parse(it)
                                 binding.run {
                                     addAvatar.visibility = View.GONE
@@ -188,10 +188,6 @@ class SignUpFragment : Fragment() {
         }
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
         takePictureLauncher.launch(intent)
-    }
-
-    private fun scrollToView() {
-
     }
 
     companion object {

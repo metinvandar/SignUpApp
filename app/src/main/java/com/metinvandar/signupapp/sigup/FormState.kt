@@ -4,7 +4,7 @@ import data.FieldError
 import data.UserProfile
 
 sealed class FormState {
-    data class Idle(var imagePath: String? = null, var userProfile: UserProfile? = null) :
+    data class Idle(var userProfile: UserProfile? = null) :
         FormState()
 
     object ValidationSuccess : FormState()

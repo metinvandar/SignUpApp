@@ -12,6 +12,7 @@
     <string name="placeholder_web_site">Website</string>
     <string name="add_avatar">Tap to add avatar</string>
     <string name="submit">Submit</string>
+    <string name="sign_in">Sign In</string>
     <string name="first_name_empty_error">First name can not be empty!</string>
     <string name="email_empty_error">Email can not be empty!</string>
     <string name="password_empty_error">Password should not be empty!</string>
@@ -19,4 +20,6 @@
     <string name="profile_photo_empty_error">Profile photo can not be empty!</string>
     <string name="email_invalid">Email is invalid!</string>
     <string name="camera_permission_error">You must give camera permission to take a profile photo!</string>
+    <string name="greeting_with_name">Hello, %1$s!</string>
+    <string name="sign_in_description">Your super-awesome portfolio has been successfully submitted! The preview below is what the community will see!</string>
 </resources>

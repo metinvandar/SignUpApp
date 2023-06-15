@@ -1,8 +1,8 @@
 package data
 
 data class UserProfile(
-    val name: String,
-    val email: String,
-    val webSite: String,
-    val imagePath: String
+    var name: String? = null,
+    var email: String? = null,
+    var webSite: String? = null,
+    var imagePath: String? = null
 )

@@ -15,7 +15,9 @@
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_from_left"
             app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_from_right" />
+            app:popExitAnim="@anim/exit_from_right"
+            app:popUpTo="@id/nav_graph_main"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
