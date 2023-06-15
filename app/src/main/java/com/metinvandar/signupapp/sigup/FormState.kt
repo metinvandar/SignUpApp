@@ -1,7 +1,12 @@
 package com.metinvandar.signupapp.sigup
 
+import data.FieldError
+import data.UserProfile
+
 sealed class FormState {
-    object Idle: FormState()
-    object Success: FormState()
-    data class Error(val fieldError: FieldError): FormState()
+    data class Idle(var imagePath: String? = null, var userProfile: UserProfile? = null) :
+        FormState()
+
+    object ValidationSuccess : FormState()
+    class Error(val fieldError: FieldError) : FormState()
 }

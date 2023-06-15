@@ -1,4 +1,4 @@
-package com.metinvandar.signupapp.sigup
+package data
 
 import androidx.annotation.StringRes
 import com.metinvandar.signupapp.R
@@ -9,5 +9,6 @@ enum class FieldError(@StringRes val errorMessageId: Int) {
     EMAIL_INVALID(R.string.email_invalid),
     PASSWORD_EMPTY(R.string.password_empty_error),
     WEB_SITE_EMPTY(R.string.website_empty_error),
+    PROFILE_PHOTO_EMPTY(R.string.profile_photo_empty_error),
 }
 

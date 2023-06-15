@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SignUpApp</string>
     <string name="label_sign_up_fragment">SignUp</string>
+    <string name="ok">OK</string>
     <string name="label_camera_fragment">Camera</string>
     <string name="label_confirmation_fragment">Confirmation</string>
     <string name="sign_up_title">Profile Creation</string>
@@ -15,5 +16,7 @@
     <string name="email_empty_error">Email can not be empty!</string>
     <string name="password_empty_error">Password should not be empty!</string>
     <string name="website_empty_error">Website can not be empty!</string>
+    <string name="profile_photo_empty_error">Profile photo can not be empty!</string>
     <string name="email_invalid">Email is invalid!</string>
+    <string name="camera_permission_error">You must give camera permission to take a profile photo!</string>
 </resources>
